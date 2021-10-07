@@ -1,0 +1,214 @@
+
+
+If-else statement in R
+
+```{r}
+
+a <- 5
+
+if(a > 5) {
+  print('a is greater than 5!')
+} else 
+  if(a < 5) {
+  print('a is lesser than 5!')
+  } else {
+  print('a is 5!')
+}
+
+
+
+```
+
+
+
+```{r}
+
+xyz <- c(1, 4, 5, 8, 10)
+
+if(xyz > 5) {
+  print(xyz)
+} else {
+  print('Error')
+}
+
+
+```
+
+
+
+For loop is to iterate
+
+```{r}
+
+for(j in 1:10) {
+  print(j * 10)
+}
+
+```
+
+
+
+```{r}
+for (j in 1:5) {
+  if(xyz[j] > 5) {
+  print(xyz[j])
+} else {
+  print('Error')
+}
+}
+
+
+```
+
+
+```{r}
+for(j in xyz) {
+  if(j > 5) {
+  print(j)
+} else {
+  print('Error')
+}
+}
+```
+
+
+
+
+```{r}
+
+pqr <- ifelse(xyz > 5, xyz, 'Error')
+
+pqr
+```
+
+
+Fibonacci series
+
+1, 1, 2, 3, 5, 8, --------
+
+```{r}
+
+a <- 1
+b <- 1
+print(a)
+print(b)
+for( i in 1:50){
+  c <- b
+  b <- a + b
+  print(b)
+  a <- c
+  
+}
+
+```
+
+
+
+```{r}
+
+v <- c(1, 1)
+
+for(j in 3:50) {
+  v[j] <- v[j-1] + v[j-2]
+}
+
+print(v)
+
+```
+
+
+
+Custom Functions
+
+```{r}
+
+power_func <- function(x, y) {
+              z <- x^y
+              return(z)
+            }
+
+power_func(5, 3)
+
+```
+
+
+
+
+Dealing with Dates
+
+```{r}
+
+'16/09/21'
+
+'16-09-21'
+
+as.Date('16/09/21' , '%d/%m/%y' )
+
+as.Date('16-09-21' , '%d-%m-%y' )
+
+
+
+as.Date('16-sep-2021' , '%d-%b-%Y' )
+
+as.Date('16-September-2021' , '%d-%B-%Y' )
+
+```
+
+
+
+```{r}
+
+as.Date('16-sep-2021' , '%d-%b-%Y' ) - as.Date('10-mar-2021' , '%d-%b-%Y' )
+
+
+
+```
+
+
+
+```{r}
+
+'16-sep-2021 22:15:10'
+
+
+as.POSIXct('16-sep-2021 22:15:10' , format = '%d-%b-%Y %H:%M:%S') - as.POSIXct('16-sep-2021 12:15:10' , format = '%d-%b-%Y %H:%M:%S')
+
+```
+
+
+
+
+```{r}
+require(stringr)
+
+x <- c('okay', 'Ashok', 'Eminem')
+
+str_count(x, pattern = 'ok')
+
+
+
+
+```
+
+
+
+```{r}
+
+str_extract(x, pattern = 'ok')
+
+```
+
+
+
+```{r}
+
+cars <- c('hyundai creta', 'maruti dezire', 'tata nexon')
+
+brands <- str_split(cars, pattern = ' ', simplify = T)[ , 1]
+
+brands
+```
+
+
+
+
